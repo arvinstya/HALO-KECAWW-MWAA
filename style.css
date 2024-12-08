@@ -53,15 +53,32 @@ h2 {
 .gallery .photos {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    flex-wrap: wrap;       /* Membuat gambar turun ke baris baru jika layar sempit */
+    gap: 10px;             /* Jarak antar gambar */
     margin-top: 10px;
 }
 
 .gallery .photos img {
     border-radius: 10px;
-    width: 400px;
-    height: 400px;
+    max-width: 100%;       /* Gambar tidak melebihi lebar container */
+    height: auto;          /* Menyesuaikan tinggi agar proporsional */
+    object-fit: cover;     /* Menjaga isi gambar tetap pas dalam bingkai */
+    flex: 1 1 calc(33.333% - 20px); /* Setiap gambar mengambil sepertiga lebar container, fleksibel */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opsional: Tambahkan efek bayangan */
 }
+
+@media (max-width: 768px) {
+    .gallery .photos img {
+        flex: 1 1 calc(50% - 20px); /* Gambar mengambil setengah lebar pada layar sedang */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery .photos img {
+        flex: 1 1 calc(100% - 20px); /* Gambar mengambil seluruh lebar pada layar kecil */
+    }
+}
+
 
 
 footer {
