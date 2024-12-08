@@ -134,21 +134,3 @@ button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Atur container "photos" agar lebih fleksibel */
-.photos {
-  display: flex;          /* Menjadikan semua gambar dalam satu baris */
-  flex-wrap: wrap;        /* Mengatur gambar agar turun ke baris berikutnya jika terlalu banyak */
-  gap: 10px;              /* Jarak antar gambar */
-  justify-content: center; /* Memusatkan gambar dalam container */
-}
-
-/* Atur gaya untuk gambar */
-.photos img {
-  max-width: 100%;        /* Membatasi gambar agar tidak melebihi lebar container */
-  height: auto;           /* Menjaga proporsi gambar */
-  flex: 1 1 calc(33.333% - 10px); /* Setiap gambar memiliki ukuran relatif fleksibel */
-  object-fit: cover;      /* Menghindari distorsi gambar */
-  border-radius: 5px;     /* Opsional: Tambahkan sudut melengkung pada gambar */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opsional: Tambahkan efek bayangan */
-}
-
